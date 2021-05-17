@@ -1,0 +1,411 @@
+/* Reference */
+/* 
+type selector: h1 { prop:value  ; prop:value ; prop:value ; }
+class selector: .classname { }
+id selector: #idname { }
+
+multi element selector: h1 , h2#idname { p:v ; p:v ; }
+*/
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html, body, header, nav, img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+
+}
+header, footer, nav, section {
+    display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+head, meta, title {
+    /* Not usually altered and styled */
+}
+
+link {
+    /* Nothing done to link type selector */
+}
+
+/* ***** */
+/* Body Style Controls */
+/* ***** */
+
+/* Gradient Background and Font Text Color */
+body {
+	line-height: 1;
+    background-color: #C3CDE6;
+    background-image: linear-gradient(45deg, #8297CB 15%, #2D3E6B 85%);
+    
+    color: rgba(255, 255, 255, 0.65);
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-size: 17pt;
+	font-weight: 300;
+	line-height: 1.65;
+}
+
+/* ***** */
+/* Div Style Modifier */
+/* ***** */
+
+/* (Id of wrapper and main) (Classes of spotlight and content)*/
+div#wrapper {
+    width: 64em;
+    max-width: calc(100% - 4em);
+    margin: 0 auto;
+}
+
+/* Header Controls for Text Style and Children Opacity */
+header {
+    display: block;
+}
+
+#header {
+    padding: 5em 5em 1em 5em ;
+    text-align: center;
+}
+#header.alt {
+    padding: 7em 5em 4em 5em ;
+}
+#header.alt > * {
+    opacity: 1;
+    display: block;
+}
+
+#header.alt h1 {
+    font-size: 3.25em;
+}
+#header h1 {
+    margin: 0 0 0.25em 0;
+}
+
+#header p {
+    font-size: 1.25em;
+    letter-spacing: -0.025em;
+}
+
+/* Navigation bar */
+#nav {
+    color: #636363;
+	position: absolute;
+	width: 64em;
+    max-width: calc(100% - 4em);
+	padding: 0em;
+    background-color: #f7f7f7;
+	border-top-left-radius: 0.25em;
+	border-top-right-radius: 0.25em;		
+    cursor: default;		
+    text-align: center;
+}
+/* On hover over anchor elem turn text grey */
+#nav a:hover {
+    color: #636363;
+}
+/* Margin between navbar and main content */
+#nav + #main {
+    padding-top: 4.25em;
+}
+
+#nav ul {
+    /* margin: 0; */
+    padding: 0;
+    list-style: none;
+}
+#nav ul li {
+    display: inline-block;
+    margin: 0 0.35em;
+    padding: 0;
+    vertical-align: middle;
+}
+#nav ul li a {
+    display: inline-block;
+    height: 2.25em;
+    line-height: 2.25em;
+    padding: 0 1.25em;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px transparent;
+    text-decoration: none;
+}
+#nav ul li a:hover {
+    background-color: rgba(222, 222, 222, 0.25);
+}
+/* Active navbox selection not working */
+#nav ul li a.active {
+    background-color: #ffffff;
+    box-shadow: 1,1,3;
+}
+
+/* Main ID Call */
+#main {
+    background-color: #ffffff;
+    color: #636363;
+    border-radius: 0.25em;
+}   
+    /* hyperlink color on hover */
+    #main a:hover {
+        color: #636363;
+    }
+    /* Headings color chooser */
+    #main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
+        color: #636363;
+    }
+
+    #main button,
+    #main .button {
+        background-color: transparent;
+        box-shadow: inset 0 0 0 1px #dddddd;
+        color: #636363;
+    } 
+    #main ul.alt li {
+        border-top-color: #dddddd;
+    }
+
+    #main header.major h2:after {
+        background-color: #dddddd;
+        background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
+    }
+
+    #main .spotlight .image {
+        border-color: #dddddd;
+    }
+
+    /* Split between into main and interests */
+    #main > .main {
+        padding: 5em 5em 3em 5em ;
+        border-top: solid 3px #dddddd;
+    }
+
+    #main > .main:first-child {
+        border-top: 0;
+    }
+    /* Rounded corners for the main body */
+    #main > .main > .image.main:first-child {
+        margin: -5em 0 5em -5em;
+        width: calc(100% + 10em);
+        border-top-right-radius: 0.25em;
+        border-top-left-radius: 0.25em;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    #main > .main > .image.main:first-child img {
+        border-top-right-radius: 0.25em;
+        border-top-left-radius: 0.25em;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+/* Image Styles*/
+    .image {
+        border-radius: 8px;
+        border: 0;
+        display: inline-block;
+        position: relative;
+        }
+
+        .image img {
+            border-radius: 8px;
+            display: block;
+        }
+
+        .image.left, .image.right {
+        max-width: 40%;
+        }
+
+        .image.left img, .image.right img {
+            width: 100%;
+        }
+
+        .image.left {
+            float: left;
+            margin: 0 1.5em 1em 0;
+            top: 0.25em;
+        }
+
+    .image.right {
+        float: right;
+        margin: 0 0 1em 1.5em;
+        top: 0.25em;
+    }
+
+    .image.fit {
+        display: block;
+        margin: 0 0 2em 0;
+        width: 100%;
+    }
+
+        .image.fit img {
+            width: 100%;
+        }
+
+    .image.main {
+        display: block;
+        margin: 0 0 3em 0;
+        width: 100%;
+    }
+
+        .image.main img {
+            width: 100%;
+        }
+
+.spotlight .image img {
+    display: block;
+    border-radius: 100%;
+    width: 16em
+}
+
+
+
+
+/* ***** */
+/* Screen Measure Adjustments*/
+/* ****** */
+
+/* Computer Screen size*/
+@media screen and (max-width: 1680px) {
+     body   {
+        font-size: 14pt;
+    }
+}
+/* Tablet Screen size*/
+@media screen and (max-width: 1280px) {
+    
+    #header {
+        padding: 4em 4em 0.1em 4em ;
+    }
+    #header.alt {
+        padding: 6em 4em 3em 4em ;
+    }
+     body   {
+        font-size: 12pt;
+    }
+    #main > .main {
+        padding: 4em 4em 2em 4em ;
+    }
+
+    #main > .main > .image.main:first-child {
+        margin: -4em 0 4em -4em;
+        width: calc(100% + 8em);
+    }
+}
+
+@media screen and (max-width: 980px) {
+    
+    #header {
+        padding: 4em 3em 0.1em 3em ;
+    }
+    #header.alt {
+            padding: 5em 3em 2em 3em ;
+    }
+    #main > .main {
+        padding: 4em 3em 2em 3em ;
+    }
+
+    #main > .main > .image.main:first-child {
+        margin: -4em 0 4em -3em;
+        width: calc(100% + 6em);
+    }
+}
+
+@media screen and (max-width: 736px) {
+    
+    #header {
+        padding: 3em 2em 0.1em 2em ;
+    }
+    #header p {
+        font-size: 1em;
+        letter-spacing: 0;
+    }
+    #header p br {
+        display: none;
+    }
+    #header.alt {
+        padding: 4em 2em 1em 2em ;
+    }
+    #header.alt h1 {
+        font-size: 2.5em;
+    }
+    /* Vanish navbar when screen is < 736px */
+    #nav {
+        display: none;
+    }
+    #nav + #main {
+        padding-top: 0;
+    }
+
+    #main > .main {
+        padding: 3em 2em 1em 2em ;
+    }
+    #main > .main > .image.main:first-child {
+        margin: -3em 0 2em -2em;
+        width: calc(100% + 4em);
+    }
+
+}
+
+/* When screen is 480px make the page at least 320px */
+@media screen and (max-width: 480px) {
+    html, body {
+        min-width: 320px;
+    }
+    /* Page content wrapper modifier */
+    #wrapper {
+        max-width: calc(100% - 2em);
+    }
+    #header {
+        padding: 3em 1.5em 0.1em 1.5em ;
+    }
+    #header.alt {
+        padding: 4em 1.5em 1em 1.5em ;
+    }
+
+    #main > .main {
+        padding: 3em 1.5em 1em 1.5em ;
+    }
+    #main > .main > .image.main:first-child {
+        margin: -3em 0 1.5em -1.5em;
+        width: calc(100% + 3em);
+    }
+}
+
+/* Phone screen size*/
+@media screen and (max-width: 360px) {
+     body   {
+        font-size: 11pt;
+    }
+    /* Page content wrapper modifier */
+    #wrapper {
+        max-width: 100%;
+    }
+    #header {
+        padding: 2.5em 1em 0.1em 1em ;
+    }
+    #header.alt {
+        padding: 3.5em 1em 0.5em 1em ;
+    }
+
+    #main {
+        border-radius: 0;
+    }
+    #main > .main {
+        padding: 2.5em 1em 0.5em 1em ;
+    }
+    #main > .main > .image.main:first-child {
+        margin: -2.5em 0 1.5em -1em;
+        width: calc(100% + 2em);
+        border-radius: 0;
+    }
+    #main > .main > .image.main:first-child img {
+        border-radius: 0;
+    }
+}
